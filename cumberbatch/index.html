@@ -38,7 +38,7 @@
     <button onclick="generateName()">Generate!</button> <button onclick="copyName()">Copy</button>
     
     <script>
-        const bene = [
+        const beneArray = [
   "Bene", "Boner", "Biden", "Border", "Labra", "Baker", "Snicker", "Ramble", "Painter", "Sprinkle",
   "Reindeer", "Sherbet", "Lady", "Elder", "Berry", "Snorkle", "Blubber", "Beetle", "Fire", "Baby",
   "Checker", "Alpha", "Cutie", "Elfy", "Wimble", "Forty", "Breaky", "Achy", "Albus", "Bucking",
@@ -62,7 +62,7 @@
 ];
 
 
-        const dict = [
+        const dictArray = [
   "dict", "dick", "duck", "daint", "doodle", "dark", "fork", "scrum", "cant", "fart",
   "pump", "elk", "bump", "zoo", "berry", "dork", "dink", "juice", "cake", "mix",
   "check", "pi", "pie", "butt", "don", "two", "hart", "crotch", "loft", "ham",
@@ -85,7 +85,7 @@
   "dam", "wank", "bert", "top", "rake", "man", "bridge", "break", "by", "man"
 ];
 
-const cumber = [
+const cumberArray = [
   "Cumber", "Camper", "Thunder", "Chamber", "Crummy", "Banter", "Lady", "Shackle", "Lambo", "Boinker",
   "Cucumber", "Licker", "Liqueur", "Ticker", "Lander", "Sprinkle", "Lordy", "Benny", "Dwarven", "Chopper",
   "Checky", "Beta", "Maker", "Magic", "Mighty", "Upper", "Curly", "Dumble", "Dingle", "Concu",
@@ -108,7 +108,7 @@ const cumber = [
   "Lobby", "Danger", "Humper", "Chatbot", "Smarty", "Gender", "Tonic", "Calling", "Bryggen", "Wonder"
 ];
 
-const batch = [
+const batchArray = [
   "batch", "bunch", "bunk", "bork", "taint", "pants", "lamp", "poodle", "banter", "boinker",
   "patch", "snatch", "pump", "donk", "pop", "cooch", "butt", "lord", "hill", "box", "cheeks",
   "park", "break", "bling", "blink", "class", "fries", "dore", "gun", "brine", "broth",
@@ -118,19 +118,25 @@ const batch = [
   
 ];
 
+        function getRandomElement(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+
         function generateName() {
-            const randBene = bene[Math.floor(Math.random() * firstNames.length)];
-            const randDict = dict[Math.floor(Math.random() * lastNames.length)];
-            const randCumber = cumber[Math.floor(Math.random() * lastNames.length)];
-            const randBatch = batch[Math.floor(Math.random() * lastNames.length)];
-            document.getElementById('name').innerText = `${randBene} ${randDict} ${randCumber} ${randBatch}`;
+            const bene = getRandomElement(beneArray);
+            const dict = getRandomElement(dictArray);
+            const cumber = getRandomElement(cumberArray);
+            const batch = getRandomElement(batchArray);
+
+            const fullName = bene + dict + " " + cumber + batch;
+            document.getElementById("name").innerText = fullName;
         }
         
         function copyName() {
-            const name = document.getElementById('name').innerText;
+            const name = document.getElementById("name").innerText;
             navigator.clipboard.writeText(name).then(() => {
                 }).catch(err => {
-                console.error('Failed to copy: ', err);
+                console.error("Failed to copy: ", err);
             });
         }
     </script>
