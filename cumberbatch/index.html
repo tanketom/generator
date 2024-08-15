@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benedict Cumberbatch Name Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        #name {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        footer {
+            margin-top: 80px;
+            color: #aaaaaa;
+        }
+        footer a {
+            color: #888888;
+        }
+    </style>
+</head>
+<body>
+    <h1>You know, that British actor, wotshisface?</h1>
+    <div id="name"></div>
+    <button onclick="generateName()">Generate!</button> <button onclick="copyName()">Copy</button>
+    
+    <script>
+        const bene = [
+  "Bene", "Boner", "Biden", "Border", "Labra", "Baker", "Snicker", "Ramble", "Painter", "Sprinkle",
+  "Reindeer", "Sherbet", "Lady", "Elder", "Berry", "Snorkle", "Blubber", "Beetle", "Fire", "Baby",
+  "Checker", "Alpha", "Cutie", "Elfy", "Wimble", "Forty", "Breaky", "Achy", "Albus", "Bucking",
+  "Chicken", "Princess", "Master", "Bangy", "Nicker", "Groovy", "Sherlock", "Dapper", "Whitey", "Swordy",
+  "Knuckle", "Waffle", "Avon", "Hamlet", "Nickle", "Pika", "Lego", "Teenage", "Beta", "Nether",
+  "Over", "Chester", "Melty", "Saintly", "Tumblr", "Ninetys", "Strudel", "Naked", "Business", "Bunker",
+  "Trouser", "Woopsy", "Fifty", "Bondage", "Dungeon", "Doctor", "Lonely", "Sheffield", "Holy", "Palace",
+  "Choir", "Bushy", "Jesus", "Hampton", "Circum", "Royal", "Finger", "Bucket", "Rubber", "Sixty",
+  "Noodle", "Nibble", "Nipple", "Founder", "English", "Hater", "Angsty", "Lumpy", "Bachelor", "Lanky",
+  "Swanky", "Martin", "Eurus", "Mycroft", "Beardy", "Dollar", "Euro", "England", "Hundred", "Swinger",
+  "Ogre", "Crumple", "Tosser", "Baity", "Batty", "Bolder", "Hailstorm", "Better", "Whipper", "Earlgrey",
+  "Bacon", "Bumble", "Pudding", "Spammy", "Shipper", "Pirate", "Hamper", "Pointer", "Spanky", "Humpy",
+  "Boulder", "Bander", "Mushroom", "Swallow", "Multi", "British", "Punter", "Typo", "Country", "Hearsay",
+  "Spotty", "Brainy", "Miser", "Wonker", "Borrow", "Burrow", "Burley", "Madcow", "Buttock", "Vader",
+  "Butter", "Strumpet", "Heyo", "Penny", "Gainy", "Flabber", "Wallop", "Dollop", "Binder", "Bander",
+  "Body", "Scissor", "Blender", "Burger", "Carrot", "Tweedly", "Bacon", "Inter", "Bellend", "Humper",
+  "Snackpack", "Swaddle", "Bugger", "Bollock", "Fortnight", "Blimey", "Hoover", "Uncle", "Fanny", "Banger",
+  "Blighty", "Ballgag", "Barmy", "Almond", "Steamy", "Borough", "Bromwich", "Bathhouse", "Tubby", "Milky",
+  "Breakfast", "Sportsman", "Blatant", "Fancy", "Fiddle", "Jolly", "Shamble", "Swotty", "Ninebob", "Earwig",
+  "Swindle", "Brainy", "Engel", "Muffin", "Bunsen", "Highway", "London", "Sushi", "Bergen", "Burning"
+];
+
+
+        const dict = [
+  "dict", "dick", "duck", "daint", "doodle", "dark", "fork", "scrum", "cant", "fart",
+  "pump", "elk", "bump", "zoo", "berry", "dork", "dink", "juice", "cake", "mix",
+  "check", "pi", "pie", "butt", "don", "two", "hart", "crotch", "loft", "ham",
+  "bake", "punk", "tweed", "bang", "twist", "thor", "holmes", "cheeks", "white", "sword",
+  "moose", "breath", "swan", "lick", "back", "chu", "man", "throb", "lurch", "port",
+  "hind", "kirk", "lax", "string", "hax", "kid", "fake", "nude", "time", "sock",
+  "buck", "brunt", "strict", "whip", "dom", "bill", "lodge", "combe", "rod", "boy",
+  "barn", "brow", "christ", "mound", "shaft", "shanks", "bang", "turd", "knife", "nine",
+  "axe", "snack", "lake", "duke", "troll", "voice", "swirl", "slim", "stain", "fish",
+  "swag", "meme", "dog", "eyes", "dub", "step", "knees", "weak", "deck", "bank",
+  "scrolls", "bog", "slam", "loose", "dong", "train", "duck", "trump", "trout", "tea",
+  "swap", "tree", "buck", "spam", "pair", "chin", "plight", "thunk", "thumb", "sex",
+  "rock", "dubz", "peel", "dork", "god", "pound", "shoot", "type", "made", "shite",
+  "grail", "nerd", "burn", "bart", "dent", "gruel", "dump", "snog", "punt", "fun",
+  "lame", "dont", "shart", "trick", "tract", "gast", "cod", "bill", "earl", "snatch",
+  "calm", "kick", "lock", "king", "fit", "tweet", "fat", "net", "phile", "daint",
+  "knack", "gob", "cheers", "pint", "brass", "kip", "zed", "nosh", "bobs", "mash",
+  "pip", "snook", "boo", "strange", "crisp", "wraith", "scar", "witch", "spy", "bag",
+  "meal", "wag", "sticks", "fluke", "honk", "good", "quid", "nub", "miff", "warts",
+  "dam", "wank", "bert", "top", "rake", "man", "bridge", "break", "by", "man"
+];
+
+const cumber = [
+  "Cumber", "Camper", "Thunder", "Chamber", "Crummy", "Banter", "Lady", "Shackle", "Lambo", "Boinker",
+  "Cucumber", "Licker", "Liqueur", "Ticker", "Lander", "Sprinkle", "Lordy", "Benny", "Dwarven", "Chopper",
+  "Checky", "Beta", "Maker", "Magic", "Mighty", "Upper", "Curly", "Dumble", "Dingle", "Concu",
+  "Cannot", "Auto", "Tory", "Bonkers", "Pleasure", "Teevee", "Sherlock", "Mansion", "Culde", "Swordsman",
+  "Penny", "Chari", "Shakey", "Mandrill", "Bulba", "Squirtle", "Plastic", "Throbbing", "Sneaky", "Region",
+  "Dunning", "Vulcan", "Urban", "Angel", "Retweet", "Liver", "Cheesy", "Bareback", "Vestment", "Bottle",
+  "Bloody", "Daisy", "Slappy", "Handsy", "Blindfold", "Pillow", "Hammer", "Windsor", "Sandring", "Kensing",
+  "Tensing", "Tender", "Super", "Langley", "Muscle", "Potter", "Cable", "Able", "Sniper", "Pasta",
+  "Creamy", "Tater", "Over", "Hyper", "English", "Oinky", "Stoner", "Gutter", "Fisher", "Lovey",
+  "Manly", "Shoulder", "Sherrin", "Apple", "Vapour", "Cup-A-", "Flubber", "Handy", "Money", "Lovin",
+  "Hamfist", "Louder", "Harder", "Public", "Faster", "Scooter", "Stronger", "Elbow", "Snapper", "Hotter",
+  "Bicep", "Bundle", "Snowball", "Christmas", "Parrot", "Candid", "Dexter", "Lover", "Dumbo", "Monster",
+  "Sexy", "Devil", "Bandaid", "Dashing", "Punter", "Cheeky", "Finger", "Spirit", "Wizard", "Dicky",
+  "Mini", "Maxi", "Wiener", "Tipsy", "Topsy", "Turvey", "Moron", "Slarty", "Arthur", "Funtime",
+  "Chowder", "Crumpet", "Dumber", "Summer", "Hummer", "Perri", "Swallop", "Teatime", "Countess", "Cummer",
+  "Cricket", "Number", "Slumber", "Custard", "Cabbage", "Marmite", "Crunchy", "Mumble", "Meta", "Medi",
+  "Macro", "Meso", "Chunder", "Colly", "Dodgy", "Rubbish", "Wonky", "Spanner", "Dobber", "Wobble",
+  "Legless", "Lurgy", "Trolly", "Random", "Lusty", "Double", "Cardoor", "Scary", "Baitor", "Kettle",
+  "Teacake", "Crikey", "Dinner", "Gander", "Haggle", "Cuppa", "Roger", "Stiffy", "Bang-to-", "Gaffer",
+  "Lobby", "Danger", "Humper", "Chatbot", "Smarty", "Gender", "Tonic", "Calling", "Bryggen", "Wonder"
+];
+
+const batch = [
+  "batch", "bunch", "bunk", "bork", "taint", "pants", "lamp", "poodle", "banter", "boinker",
+  "patch", "snatch", "pump", "donk", "pop", "cooch", "butt", "lord", "hill", "box", "cheeks",
+  "park", "break", "bling", "blink", "class", "fries", "dore", "gun", "brine", "broth",
+  "aim", "suit", "bang", "mount", "man", "holmes", "face", "sac", "blade", "wank",
+  "zard", "speare", "glutes", "saur", "squirt", "cock", "morph", "pete", "marsh",
+  "brook", "lox", "wick", "duck", "loop", "pool", "ness", "lord", 
+  
+];
+
+        function generateName() {
+            const randBene = bene[Math.floor(Math.random() * firstNames.length)];
+            const randDict = dict[Math.floor(Math.random() * lastNames.length)];
+            const randCumber = cumber[Math.floor(Math.random() * lastNames.length)];
+            const randBatch = batch[Math.floor(Math.random() * lastNames.length)];
+            document.getElementById('name').innerText = `${randBene}${randDict} ${randCumber}${randBatch}`;
+        }
+        
+        function copyName() {
+            const name = document.getElementById('name').innerText;
+            navigator.clipboard.writeText(name).then(() => {
+                }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+    <footer>
+        Made by <a href="https://tutoteket.no/@tanketom">Tanketom</a>. <a href="https://tanketom.github.io/generator/">More silly generators</a>.
+    </footer>
+</body>
+</html>
