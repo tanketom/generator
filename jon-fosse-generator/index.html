@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jon Fosse-generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        #name {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        footer {
+            margin-top: 80px;
+            color: #aaaaaa;
+        }
+        footer a {
+            color: #888888;
+        }
+    </style>
+</head>
+<body>
+    <h1>Frontlosjen.com legacy Jon Fosse-generator</h1>
+    <div id="name"></div>
+    <button onclick="generateName()">Skap!</button> <button onclick="copyName()">Kopier</button>
+    
+    <script>
+        const nokonArray = [
+  "Nokon",
+  "Ari Behn",
+  "Jon Refsdal Moe",
+  "Sven Åge Birkeland",
+  "Hooman Sharifi",
+  "Agnethe Haaland",
+  "Nora",
+  "Hedvig",
+  "Hamlet",
+  "Knut Ove Arntzen",
+  "Mor di",
+  "Emma Thompson",
+  "Peer Gynt",
+  "Shakespeare",
+  "Fortinbras",
+  "Hellemyrsfolket",
+  "Den Nationale Scene",
+  "Godot",
+  "Romeo",
+  "Juliet",
+  "Kenneth Branagh",
+  "Sjørøver-Jenny",
+  "Othello",
+  "Ødipus Rex",
+  "Havet",
+  "Kvinna",
+  "Mannen",
+  "Guten",
+  "Jenta",
+  "Sonen",
+  "Bussen",
+  "Eg",
+  "Mora",
+  "Skipsføraren",
+  "Naboen",
+  "Trommeslagaren",
+  "Bjarte Hjelmeland i drag",
+  "Bukk frå oven",
+  "Ivar Aasen",
+  "Ferja",
+  "Fjorden",
+  "Ei kvinne",
+  "Ein mann",
+  "Kona",
+  "Asle",
+  "Alida",
+  "Frontlosjen",
+  "Lars Hertevig",
+  "Fredrik eller Bjørn",
+  "Ho",
+  "Han",
+  "Ein pensjonert anleggsarbeidar",
+  "Sigvald",
+  "Johannes den yngre",
+  "Johannes den eldre",
+  "To elskande",
+  "Dei døde hundane",
+  "Gitarmannen",
+  "Henrik Ibsen",
+  "Knut",
+  "Kona til Knut",
+  "Aasen, Welhaven og Hauge",
+  "Mackie Messer",
+  "Ibsen, Bjørnson, Kielland og Lie",
+  "Bertolt Brecht",
+  "Helge Jordal",
+  "Samlaget"
+];
+
+        const kjemtilArray = ["kjem til å"];
+
+        const komeArray = [
+  "komme",
+  "halde seg på fjorden",
+  "forlate mann og barn",
+  "danse tarantella",
+  "vere seg sjølv nok",
+  "gå konkurs",
+  "vente på Godot",
+  "få Nobelprisen i litteratur, sånn etter kvart",
+  "konvertere til den katolske kyrkja",
+  "vere din einaste og beste ven",
+  "gi opp",
+  "gå på ski",
+  "rasere",
+  "vere her",
+  "føde",
+  "kome heim snart",
+  "verke grei",
+  "ete",
+  "kjøpe huset",
+  "kle seg i drag",
+  "ta frå deg livsløgna",
+  "ofre seg for konge og fedreland",
+  "vinne Nordisk Råds litteraturpris",
+  "flytte inn i eit nytt hus",
+  "ikkje seie noko, fordi alt er sagt før",
+  "seie «men eg har sett deg før»",
+  "bli sjalu",
+  "bli erklært gal",
+  "tvile",
+  "brått bli redd",
+  "høyre havet slå",
+  "vere der dei andre er",
+  "ikkje komme",
+  "studere i Düsseldorf",
+  "drøyme",
+  "vere åleine",
+  "tvile på eigen intelligens",
+  "finnast",
+  "skrive",
+  "sjå havet",
+  "rømme frå Gaustad",
+  "gå gjennom sundet",
+  "bli kasta ut av studenthybelen",
+  "dra ut på sjøen og aldri kome attende",
+  "erkjenne det postmoderne subjektets splitting og einsemd",
+  "aldri til å skiljast",
+  "returnere til Dylgja",
+  "bli kjent utanfor Noreg",
+  "få nokre svar",
+  "prøve å skrive",
+  "lese Jon Fosse",
+  "bu i Grotten",
+  "skrive nynorsk",
+  "gå i naustet",
+  "bli omsett til meir enn 40 språk",
+  "gå gjennom scenen",
+  "vere høggravid",
+  "samle flasker",
+  "lyse fram hans himmel",
+  "leve så skjult som det berre går an",
+  "stå og sjå på dei to hjortane",
+  "ande kjærleik",
+  "teste Jon Fosse-generatoren",
+  "drøfte kunstens evne til å frelse",
+  "havne på dei skrå bredder"
+];
+
+
+        function generateName() {
+            const nokon = nokonArray[Math.floor(Math.random() * nokonArray.length)];
+            const kjem = kjemtilArray[Math.floor(Math.random() * kjemtilArray.length)];
+            const kome = komeArray[Math.floor(Math.random() * komeArray.length)];
+            document.getElementById('name').innerText = `${nokon} ${kjem} ${kome}`;
+        }
+        
+        function copyName() {
+            const name = document.getElementById('name').innerText;
+            navigator.clipboard.writeText(name).then(() => {
+                }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+    <footer>
+        Made by <a href="https://tutoteket.no/@tanketom">Tanketom</a>. <a href="https://tanketom.github.io/generator/">More silly generators</a>.
+    </footer>
+</body>
+</html>
