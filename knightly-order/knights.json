@@ -105,7 +105,8 @@
         "Saint Thomas",
         "Saint Peter",
         "Saint Paul",
-        "Saint John"
+        "Saint John",
+        "Randomly Generated"
     ],
     "flower": [
         "Daffodil",
@@ -139,7 +140,8 @@
         "Jasmine",
         "Hibiscus",
         "Magnolia",
-        "Star"
+        "Star",
+        "Dice"
     ],
     "animal": [
         "Stoat",
@@ -278,7 +280,6 @@
         "{prefix} of {flower}s of {holy}",
         "{prefix} of {holy} {cognomen}",
         "{prefix} of {flower} and {animal}",
-        "{prefix} of {animal} and {animal}",
         "{prefix} of {animal} and its {flower}",
         "{prefix} of {holy} {cognomen}",
         "{prefix} of {colour} {cognomen}",
