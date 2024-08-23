@@ -26,7 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
         }
 
-        return `<svg width="100" height="100">${svgShape}</svg>`;
+        return svgShape;
+    }
+
+    function generateShield() {
+        const heraldry = generateHeraldry();
+        return `
+            <svg width="200" height="250" viewBox="0 0 200 250">
+                <path d="M100 0 L200 50 L200 200 L100 250 L0 200 L0 50 Z" fill="#cccccc" stroke="#000000" stroke-width="5"/>
+                ${heraldry}
+            </svg>
+        `;
     }
 
     function generateOrder(data) {
@@ -55,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 const randomOrder = generateOrder(data);
                 nameDiv.textContent = randomOrder;
-                heraldryDiv.innerHTML = generateHeraldry();
+                heraldryDiv.innerHTML = generateShield();
             });
     }
 

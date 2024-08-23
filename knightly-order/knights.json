@@ -28,8 +28,7 @@
         "Congregation",
         "Federation",
         "League",
-        "Society",
-        "Order of the Shield"
+        "Society"
     ],
     "holy": [
         "the Holy Sepulchre",
@@ -93,7 +92,8 @@
         "Lavender",
         "Jasmine",
         "Hibiscus",
-        "Magnolia"
+        "Magnolia",
+        "Star",
     ],
     "animal": [
         "Stoat",
@@ -144,7 +144,6 @@
         "Yellow",
         "Purple",
         "Orange",
-        "Pink",
         "Brown",
         "Black",
         "White",
@@ -225,17 +224,20 @@
         "{prefix} of {holy}",
         "{prefix} of {animal}",
         "{prefix} of {colour} {flower}",
+        "{prefix} of {colour} {animal}",
         "{prefix} of {flower} of {holy}",
         "{prefix} of {cognomen}",
         "{prefix} of {colour} {animal}",
         "{prefix} of {flower} and {animal}",
-        "{prefix} of {holy} and {cognomen}",
+        "{prefix} of {animal} and {animal}",
+        "{prefix} of {holy} {cognomen}",
         "{prefix} of {colour} {cognomen}",
         "{prefix} of {animal} and {flower}",
         "{prefix} of {colour} {holy}",
         "{prefix} of {flower} and {cognomen}",
         "{prefix} of {animal} and {cognomen}",
         "{prefix} of {colour} {animal} and {flower}",
-        "{prefix} of {holy} and {colour} {flower}"
+        "{prefix} of {holy} and {colour} {flower}",
+        "{prefix} of {flower}s {colour}"
     ]
 }
