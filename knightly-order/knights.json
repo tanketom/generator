@@ -247,7 +247,7 @@
     ],
     "formats": [
         "{prefix} of {holy}",
-        "{prefix} of {animal}",
+        "{prefix} of {animal}s",
         "{prefix} of {colour} {flower}",
         "{prefix} of {colour} {flower}s",
         "{prefix} of {colour} {animal}",
