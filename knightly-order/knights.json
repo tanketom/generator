@@ -1,6 +1,5 @@
 {
     "prefix": [
-        "The Teutonic Order",
         "Order",
         "Knights",
         "Supreme Order",
@@ -29,6 +28,28 @@
         "Federation",
         "League",
         "Society"
+    ],
+    "area": [
+        "Aetherian",
+        "Chthonic",
+        "Eldaric",
+        "Fomorian",
+        "Gaian",
+        "Hyperborean",
+        "Icarian",
+        "Jotunheimic",
+        "Kurganic",
+        "Lemurian",
+        "Muian",
+        "Niflheimic",
+        "Ophidian",
+        "Pangaean",
+        "Quiviran",
+        "R'lyehian",
+        "Stygian",
+        "Thulian",
+        "Urukian",
+        "Vrilian"
     ],
     "holy": [
         "the Holy Sepulchre",
@@ -247,10 +268,12 @@
     ],
     "formats": [
         "{prefix} of {holy}",
+        "The {area} {prefix} of {holy}",
         "{prefix} of {animal}s",
-        "{prefix} of {colour} {flower}",
+        "{prefix} of {area} {animal}s",
+        "{prefix} of the {colour} {flower}",
         "{prefix} of {colour} {flower}s",
-        "{prefix} of {colour} {animal}",
+        "{prefix} of the {colour} {animal}",
         "{prefix} of {colour} {animal}s",
         "{prefix} of {flower}s of {holy}",
         "{prefix} of {holy} {cognomen}",
@@ -261,10 +284,15 @@
         "{prefix} of {colour} {cognomen}",
         "{prefix} of {animal} and {flower}",
         "{prefix} of {colour} {holy}",
-        "{prefix} of {flower} and {cognomen}",
-        "{prefix} of {animal} and {cognomen}",
+        "{prefix} of the {flower} and {cognomen}",
+        "{prefix} of the {animal} and {cognomen}",
         "{prefix} of {colour} {animal} and {flower}",
         "{prefix} of {holy} and {colour} {flower}",
-        "{prefix} of {flower}s {colour}"
+        "{prefix} of {flower}s {colour}",
+        "{prefix} of {area} {flower}s"
+        "{prefix} of {area} {animal}s",
     ]
 }
+
+// TODO
+// Fix his/hers
