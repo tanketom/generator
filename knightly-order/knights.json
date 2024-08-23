@@ -1,0 +1,34 @@
+{
+    "prefix": [
+        "The Teutonic Order",
+        "Order of the",
+        "Knights of the",
+        "Supreme Order of the",
+        "Royal Order of the",
+        "Noble Order of the",
+        "Compagnie of the"
+    ],
+    "holy": [
+        "Holy Sepulchre",
+        "Saint Michael",
+        "Saint George",
+        "Saint Olav",
+        "Saint Maurice",
+        "Saint Lazarus",
+        "Immaculate Conception"
+    ],
+    "flower": [
+        "Daffodils",
+        "Roses Red",
+        "Golden Fleece",
+        "Black Swan",
+        "Dove"
+    ],
+    "animal": [
+        "Stoat and the Ear",
+        "Thistle of Bourbon",
+        "Cross",
+        "Spur",
+        "Band"
+    ]
+}
