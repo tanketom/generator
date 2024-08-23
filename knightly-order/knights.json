@@ -9,7 +9,27 @@
         "Compagnie",
         "First Order",
         "Second Knights",
-        "Clandestine Band"
+        "Clandestine Band",
+        "Brotherhood",
+        "Sisterhood",
+        "Legion",
+        "Alliance",
+        "Guild",
+        "Fellowship",
+        "Circle",
+        "Council",
+        "Assembly",
+        "Confederation",
+        "Union",
+        "Fraternity",
+        "Sorority",
+        "Coalition",
+        "Consortium",
+        "Congregation",
+        "Federation",
+        "League",
+        "Society",
+        "Order of the Shield"
     ],
     "holy": [
         "the Holy Sepulchre",
@@ -22,7 +42,26 @@
         "the Immaculate Conception",
         "the Late King",
         "the Queen in Waiting",
-        "she who will eat the Sun"
+        "she who will eat the Sun",
+        "Saint Ignatius",
+        "Saint Benedict",
+        "Saint Gabriel",
+        "Saint Raphael",
+        "Saint Uriel",
+        "Saint Michael",
+        "Saint George",
+        "Saint Patrick",
+        "Saint Andrew",
+        "Saint David",
+        "Saint Nicholas",
+        "Saint Christopher",
+        "Saint Sebastian",
+        "Saint Anthony",
+        "Saint Francis",
+        "Saint Thomas",
+        "Saint Peter",
+        "Saint Paul",
+        "Saint John"
     ],
     "flower": [
         "Daffodils",
@@ -36,11 +75,25 @@
         "Cross",
         "Shield",
         "Sword",
-        "Swords",
-        "Daggers",
-        "Fists",
+        "Morning-Star",
+        "Dagger",
+        "Fist",
         "Dandelion",
-        "Early"
+        "Early",
+        "Tulip",
+        "Lily",
+        "Orchid",
+        "Sunflower",
+        "Violet",
+        "Iris",
+        "Poppy",
+        "Marigold",
+        "Chrysanthemum",
+        "Peony",
+        "Lavender",
+        "Jasmine",
+        "Hibiscus",
+        "Magnolia"
     ],
     "animal": [
         "Stoat",
@@ -78,10 +131,11 @@
         "Shark",
         "Crocodile",
         "Turtle",
-        "Swan",
         "Hand",
         "Ear",
-        "Knee-cap"
+        "Knee-cap",
+        "Bat",
+        "Moth"
     ],
     "colour": [
         "Red",
@@ -114,7 +168,16 @@
         "Teal",
         "Navy",
         "Olive",
-        "Coral"
+        "Coral",
+        "Amber",
+        "Bronze",
+        "Copper",
+        "Ruby",
+        "Topaz",
+        "Aquamarine",
+        "Periwinkle",
+        "Mint",
+        "Peach"
     ],
     "cognomen": [
         "the Good",
@@ -149,7 +212,14 @@
         "the Glorious",
         "the Uneyed",
         "the Blind but Seeing",
-        "the Knowing"
+        "the Knowing",
+        "the Unseen",
+        "the Unheard",
+        "the Unbroken",
+        "the Unforgiven",
+        "the Unyielding",
+        "the Unconquered",
+        "the Unrelenting"
     ],
     "formats": [
         "{prefix} of {holy}",
@@ -165,7 +235,7 @@
         "{prefix} of {colour} and {holy}",
         "{prefix} of {flower} and {cognomen}",
         "{prefix} of {animal} and {cognomen}",
-        "{prefix} of {colour} and {animal} and {flower}",
+        "{prefix} of {colour} {animal} and {flower}",
         "{prefix} of {holy} and {colour} {flower}"
     ]
 }
