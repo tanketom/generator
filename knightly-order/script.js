@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const animal = data.animal[Math.floor(Math.random() * data.animal.length)];
         const colour = data.colour[Math.floor(Math.random() * data.colour.length)];
         const cognomen = data.cognomen[Math.floor(Math.random() * data.cognomen.length)];
+        const area = data.area[Math.floor(Math.random() * data.area.length)];
 
         const formats = data.formats;
         const randomFormat = formats[Math.floor(Math.random() * formats.length)];
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .replace("{animal}", animal)
             .replace("{colour}", colour)
             .replace("{cognomen}", cognomen);
+            .replace("{area}", area)
 
         return { orderName, colour };
     }
