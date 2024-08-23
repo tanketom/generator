@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
             .replace("{flower}", flower)
             .replace("{animal}", animal)
             .replace("{colour}", colour)
-            .replace("{cognomen}", cognomen);
-            .replace("{area}", area)
+            .replace("{cognomen}", cognomen)
+            .replace("{area}", area);
 
         return { orderName, colour };
     }
