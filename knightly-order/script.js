@@ -76,3 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Generate an order on load
     fetchAndGenerateOrder();
 });
+
+//TODO
+//Fix his/hers/its
