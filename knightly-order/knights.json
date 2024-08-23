@@ -151,32 +151,21 @@
         "the Blind but Seeing",
         "the Knowing"
     ],
-    "generateOrder": function() {
-        const prefix = this.prefix[Math.floor(Math.random() * this.prefix.length)];
-        const holy = this.holy[Math.floor(Math.random() * this.holy.length)];
-        const flower = this.flower[Math.floor(Math.random() * this.flower.length)];
-        const animal = this.animal[Math.floor(Math.random() * this.animal.length)];
-        const colour = this.colour[Math.floor(Math.random() * this.colour.length)];
-        const cognomen = this.cognomen[Math.floor(Math.random() * this.cognomen.length)];
-
-        const formats = [
-            `${prefix} of ${holy}`,
-            `${prefix} of ${animal}`,
-            `${prefix} of ${colour} ${flower}`,
-            `${prefix} of ${flower} of ${holy}`,
-            `${prefix} of ${cognomen}`,
-            `${prefix} of ${colour} ${animal}`,
-            `${prefix} of ${flower} and ${animal}`,
-            `${prefix} of ${holy} and ${cognomen}`,
-            `${prefix} of ${colour} ${cognomen}`,
-            `${prefix} of ${animal} and ${flower}`,
-            `${prefix} of ${colour} and ${holy}`,
-            `${prefix} of ${flower} and ${cognomen}`,
-            `${prefix} of ${animal} and ${cognomen}`,
-            `${prefix} of ${colour} and ${animal} and ${flower}`,
-            `${prefix} of ${holy} and ${colour} ${flower}`
-        ];
-
-        return formats[Math.floor(Math.random() * formats.length)];
-    }
+    "formats": [
+        "{prefix} of {holy}",
+        "{prefix} of {animal}",
+        "{prefix} of {colour} {flower}",
+        "{prefix} of {flower} of {holy}",
+        "{prefix} of {cognomen}",
+        "{prefix} of {colour} {animal}",
+        "{prefix} of {flower} and {animal}",
+        "{prefix} of {holy} and {cognomen}",
+        "{prefix} of {colour} {cognomen}",
+        "{prefix} of {animal} and {flower}",
+        "{prefix} of {colour} and {holy}",
+        "{prefix} of {flower} and {cognomen}",
+        "{prefix} of {animal} and {cognomen}",
+        "{prefix} of {colour} and {animal} and {flower}",
+        "{prefix} of {holy} and {colour} {flower}"
+    ]
 }

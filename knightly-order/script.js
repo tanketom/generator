@@ -29,17 +29,37 @@ document.addEventListener('DOMContentLoaded', () => {
         return `<svg width="100" height="100">${svgShape}</svg>`;
     }
 
-    function generateOrder() {
+    function generateOrder(data) {
+        const prefix = data.prefix[Math.floor(Math.random() * data.prefix.length)];
+        const holy = data.holy[Math.floor(Math.random() * data.holy.length)];
+        const flower = data.flower[Math.floor(Math.random() * data.flower.length)];
+        const animal = data.animal[Math.floor(Math.random() * data.animal.length)];
+        const colour = data.colour[Math.floor(Math.random() * data.colour.length)];
+        const cognomen = data.cognomen[Math.floor(Math.random() * data.cognomen.length)];
+
+        const formats = data.formats;
+        const randomFormat = formats[Math.floor(Math.random() * formats.length)];
+
+        return randomFormat
+            .replace("{prefix}", prefix)
+            .replace("{holy}", holy)
+            .replace("{flower}", flower)
+            .replace("{animal}", animal)
+            .replace("{colour}", colour)
+            .replace("{cognomen}", cognomen);
+    }
+
+    function fetchAndGenerateOrder() {
         fetch('knights.json')
             .then(response => response.json())
             .then(data => {
-                const randomOrder = data.generateOrder();
+                const randomOrder = generateOrder(data);
                 nameDiv.textContent = randomOrder;
                 heraldryDiv.innerHTML = generateHeraldry();
             });
     }
 
-    generateButton.addEventListener('click', generateOrder);
+    generateButton.addEventListener('click', fetchAndGenerateOrder);
     copyButton.addEventListener('click', () => {
         const textToCopy = nameDiv.textContent;
         navigator.clipboard.writeText(textToCopy).then(() => {
@@ -50,5 +70,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Generate an order on load
-    generateOrder();
+    fetchAndGenerateOrder();
 });
