@@ -6,30 +6,45 @@
         "Supreme Order",
         "Royal Order",
         "Noble Order",
-        "Compagnie"
+        "Compagnie",
+        "First Order",
+        "Second Knights",
+        "Clandestine Band"
     ],
     "holy": [
         "the Holy Sepulchre",
+        "the Crucible",
         "Saint Aethelred",
         "Saint Valerian",
         "Saint Elysia",
         "Saint Thalor",
         "Saint Draconis",
-        "the Immaculate Conception"
+        "the Immaculate Conception",
+        "the Late King",
+        "the Queen in Waiting",
+        "she who will eat the Sun"
     ],
     "flower": [
-        "the Daffodils",
-        "the Roses Red",
-        "the Golden Fleece",
-        "the Black Swan",
-        "the Dove"
+        "Daffodils",
+        "Roses",
+        "Golden Fleece",
+        "Thistle",
+        "Aegis",
+        "Band",
+        "Spur",
+        "Sash",
+        "Cross",
+        "Shield",
+        "Sword",
+        "Swords",
+        "Daggers",
+        "Fists",
+        "Dandelion",
+        "Early"
     ],
     "animal": [
-        "Stoat and the Ear",
-        "Thistle",
-        "Cross",
-        "Spur",
-        "Band",
+        "Stoat",
+        "Dove",
         "Lion",
         "Tiger",
         "Bear",
@@ -62,7 +77,11 @@
         "Whale",
         "Shark",
         "Crocodile",
-        "Turtle"
+        "Turtle",
+        "Swan",
+        "Hand",
+        "Ear",
+        "Knee-cap"
     ],
     "colour": [
         "Red",
@@ -77,6 +96,7 @@
         "White",
         "Grey",
         "Silver",
+        "Golden",
         "Gold",
         "Crimson",
         "Scarlet",
@@ -126,6 +146,9 @@
         "the Vigilant",
         "the Unyielding",
         "the Magnificent",
-        "the Glorious"
+        "the Glorious",
+        "the Uneyed",
+        "the Blind but Seeing",
+        "the Knowing"
     ]
 }

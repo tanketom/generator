@@ -48,7 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     `${prefix} of ${cognomen}`,
                     `${prefix} of ${colour} ${animal}`,
                     `${prefix} of ${flower} and ${animal}`,
-                    `${prefix} of ${holy} and ${cognomen}`
+                    `${prefix} of ${holy} and ${cognomen}`,
+                    `${prefix} of the ${animal}s of ${holy} ${cognomen}`,
+                    `${prefix} of the ${flower}s of ${holy} ${cognomen}`
                 ];
 
                 const randomOrder = formats[Math.floor(Math.random() * formats.length)];
