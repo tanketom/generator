@@ -33,27 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('knights.json')
             .then(response => response.json())
             .then(data => {
-                const prefix = data.prefix[Math.floor(Math.random() * data.prefix.length)];
-                const holy = data.holy[Math.floor(Math.random() * data.holy.length)];
-                const flower = data.flower[Math.floor(Math.random() * data.flower.length)];
-                const animal = data.animal[Math.floor(Math.random() * data.animal.length)];
-                const colour = data.colour[Math.floor(Math.random() * data.colour.length)];
-                const cognomen = data.cognomen[Math.floor(Math.random() * data.cognomen.length)];
-
-                const formats = [
-                    `${prefix} of ${holy}`,
-                    `${prefix} of ${animal}`,
-                    `${prefix} of ${colour} ${flower}`,
-                    `${prefix} of ${flower} of ${holy}`,
-                    `${prefix} of ${cognomen}`,
-                    `${prefix} of ${colour} ${animal}`,
-                    `${prefix} of ${flower} and ${animal}`,
-                    `${prefix} of ${holy} and ${cognomen}`,
-                    `${prefix} of the ${animal}s of ${holy} ${cognomen}`,
-                    `${prefix} of the ${flower}s of ${holy} ${cognomen}`
-                ];
-
-                const randomOrder = formats[Math.floor(Math.random() * formats.length)];
+                const randomOrder = data.generateOrder();
                 nameDiv.textContent = randomOrder;
                 heraldryDiv.innerHTML = generateHeraldry();
             });
