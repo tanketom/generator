@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nameDiv = document.getElementById('name');
     const heraldryDiv = document.getElementById('heraldry');
 
-    function generateHeraldry() {
+    function generateHeraldry(orderName) {
         const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'black', 'white'];
         const shapes = ['circle', 'square', 'triangle', 'star'];
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -13,28 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
         let svgShape;
         switch (randomShape) {
             case 'circle':
-                svgShape = `<circle cx="50" cy="50" r="40" fill="${randomColor}" />`;
+                svgShape = `<circle cx="100" cy="125" r="40" fill="${randomColor}" />`;
                 break;
             case 'square':
-                svgShape = `<rect x="10" y="10" width="80" height="80" fill="${randomColor}" />`;
+                svgShape = `<rect x="60" y="85" width="80" height="80" fill="${randomColor}" />`;
                 break;
             case 'triangle':
-                svgShape = `<polygon points="50,10 90,90 10,90" fill="${randomColor}" />`;
+                svgShape = `<polygon points="100,65 140,165 60,165" fill="${randomColor}" />`;
                 break;
             case 'star':
-                svgShape = `<polygon points="50,15 61,35 85,35 66,50 75,75 50,60 25,75 34,50 15,35 39,35" fill="${randomColor}" />`;
+                svgShape = `<polygon points="100,50 115,90 155,90 125,115 135,155 100,130 65,155 75,115 45,90 85,90" fill="${randomColor}" />`;
                 break;
         }
 
-        return svgShape;
-    }
-
-    function generateShield() {
-        const heraldry = generateHeraldry();
         return `
             <svg width="200" height="250" viewBox="0 0 200 250">
                 <path d="M100 0 L200 50 L200 200 L100 250 L0 200 L0 50 Z" fill="#cccccc" stroke="#000000" stroke-width="5"/>
-                ${heraldry}
+                ${svgShape}
+                <text x="50%" y="230" font-size="14" text-anchor="middle" fill="#000000">${orderName}</text>
             </svg>
         `;
     }
@@ -65,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 const randomOrder = generateOrder(data);
                 nameDiv.textContent = randomOrder;
-                heraldryDiv.innerHTML = generateShield();
+                heraldryDiv.innerHTML = generateHeraldry(randomOrder);
             });
     }
 
