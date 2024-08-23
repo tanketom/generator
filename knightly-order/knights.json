@@ -232,7 +232,7 @@
         "{prefix} of {holy} and {cognomen}",
         "{prefix} of {colour} {cognomen}",
         "{prefix} of {animal} and {flower}",
-        "{prefix} of {colour} and {holy}",
+        "{prefix} of {colour} {holy}",
         "{prefix} of {flower} and {cognomen}",
         "{prefix} of {animal} and {cognomen}",
         "{prefix} of {colour} {animal} and {flower}",
