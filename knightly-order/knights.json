@@ -289,8 +289,8 @@
         "{prefix} of {colour} {animal} and {flower}",
         "{prefix} of {holy} and {colour} {flower}",
         "{prefix} of {flower}s {colour}",
-        "{prefix} of {area} {flower}s"
-        "{prefix} of {area} {animal}s",
+        "{prefix} of {area} {flower}s",
+        "{prefix} of {area} {animal}s"
     ]
 }
 
