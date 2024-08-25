@@ -5,31 +5,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const heraldryDiv = document.getElementById('heraldry');
 
     function generateHeraldry(color) {
-        const shapes = ['circle', 'square', 'triangle', 'star'];
-        const randomShape = shapes[Math.floor(Math.random() * shapes.length)];
+        const size = 200; // Size of the heraldry image
+        const format = 'svg'; // Format of the heraldry image
 
-        let svgShape;
-        switch (randomShape) {
-            case 'circle':
-                svgShape = `<circle cx="100" cy="125" r="40" fill="${color}" />`;
-                break;
-            case 'square':
-                svgShape = `<rect x="60" y="85" width="80" height="80" fill="${color}" />`;
-                break;
-            case 'triangle':
-                svgShape = `<polygon points="100,65 140,165 60,165" fill="${color}" />`;
-                break;
-            case 'star':
-                svgShape = `<polygon points="100,50 115,90 155,90 125,115 135,155 100,130 65,155 75,115 45,90 85,90" fill="${color}" />`;
-                break;
-        }
-
-        return `
-            <svg width="200" height="250" viewBox="0 0 200 250">
-                <path d="M100 0 L200 50 L200 200 L100 250 L0 200 L0 50 Z" fill="#cccccc" stroke="#000000" stroke-width="5"/>
-                ${svgShape}
-            </svg>
-        `;
+        return fetch(`https://armoria.herokuapp.com/?size=${size}&format=${format}&tincture=${color}`)
+            .then(response => response.text())
+            .then(svg => {
+                return svg;
+            })
+            .catch(error => {
+                console.error('Error fetching heraldry:', error);
+                return '<p>Failed to generate heraldry. Please try again.</p>';
+            });
     }
 
     function generateOrder(data) {
@@ -62,7 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 const { orderName, colour } = generateOrder(data);
                 nameDiv.textContent = orderName;
-                heraldryDiv.innerHTML = generateHeraldry(colour);
+                return generateHeraldry(colour);
+            })
+            .then(svg => {
+                heraldryDiv.innerHTML = svg;
+            })
+            .catch(error => {
+                console.error('Error fetching knights.json:', error);
+                nameDiv.textContent = 'Failed to generate order. Please try again.';
             });
     }
 
@@ -70,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     copyButton.addEventListener('click', () => {
         const textToCopy = nameDiv.textContent;
         navigator.clipboard.writeText(textToCopy).then(() => {
+            console.log('Text copied to clipboard');
         }).catch(err => {
             console.error('Failed to copy: ', err);
         });
@@ -78,6 +73,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // Generate an order on load
     fetchAndGenerateOrder();
 });
-
-//TODO
-//Fix his/hers/its
